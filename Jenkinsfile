@@ -61,6 +61,7 @@ pipeline {
                script {
                     gv.deployApp()
                 }
+              bat 'ls -l'
 
               }
           }
