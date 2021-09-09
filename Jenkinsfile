@@ -3,7 +3,7 @@ pipeline {
 
    environment
    {
-      NEW_VERSION=1.0
+      temp_NEW_VERSION=1.0
       server_cred=credentials('GitHub')
    }
  parameters {
@@ -19,7 +19,7 @@ pipeline {
              bat 'echo "Preparing"'
                      echo  "${env.BRANCH_NAME}"
             echo " ${env.JAVA_HOME}"
-                     echo "Running Release version $NEW_VERSION with ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                     echo "Running temp Release version $temp_NEW_VERSION with ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     
                  
          }
@@ -43,6 +43,7 @@ pipeline {
       stage("Deploy") {
            steps {
              bat 'echo "Deploy"'
+              echo "deploying version ${VERSION}"
               }
           }
             
