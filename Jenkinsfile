@@ -7,7 +7,10 @@ pipeline {
      
        stage('Preparation') {
          steps {
-                bat 'echo "Preparing"'
+               
+             bat 'echo "Preparing"'
+                     echo  "${env.BRANCH_NAME}"
+                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
            
          }
           }
