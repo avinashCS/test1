@@ -1,3 +1,4 @@
+def gv
 pipeline {
    agent any
 
@@ -20,13 +21,20 @@ pipeline {
                      echo  "${env.BRANCH_NAME}"
             echo " ${env.JAVA_HOME}"
                      echo "Running temp Release version $temp_NEW_VERSION with ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                    
+                  
+            script {
+                   gv = load "script.groovy" 
+                }
+
                  
          }
           }
        stage('Build') {
          steps {
              bat 'echo "build"'
+            {script
+            gv.buildApp()
+            }
               }
           }
       stage("test") {
@@ -37,6 +45,10 @@ pipeline {
             }
             steps {
                echo "TEST.......ing"
+                 script {
+                    gv.testApp()
+                }
+
             }
         }
 
@@ -44,6 +56,11 @@ pipeline {
            steps {
              bat 'echo "Deploy"'
               echo "deploying version ${VERSION}"
+              
+               script {
+                    gv.deployApp()
+                }
+
               }
           }
             
