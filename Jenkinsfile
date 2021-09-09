@@ -32,7 +32,8 @@ pipeline {
        stage('Build') {
          steps {
              bat 'echo "build"'
-            {script
+            
+            script{
             gv.buildApp()
             }
               }
