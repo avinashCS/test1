@@ -20,8 +20,8 @@ pipeline {
                      echo  "${env.BRANCH_NAME}"
             echo " ${env.JAVA_HOME}"
                      echo "Running Release version $NEW_VERSION with ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                     echo "$server_cred"
-                     bat '$server_cred'
+                    
+                 
          }
           }
        stage('Build') {
