@@ -9,7 +9,7 @@ pipeline {
          steps {
             
                 bat 'echo "Preparing"'
-                     bat 'echo "$BRANCH_NAME"'
+                     bat 'echo $BRANCH_NAME'
          }
           }
        stage('Build') {
