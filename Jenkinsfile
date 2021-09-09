@@ -11,7 +11,7 @@ pipeline {
                
              bat 'echo "Preparing"'
                      echo  "${env.BRANCH_NAME}"
-                     echo "Running Releas version $ $NEW_VERSION with ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                     echo "Running Release version $NEW_VERSION with ${env.BUILD_ID} on ${env.JENKINS_URL}"
            
          }
           }
