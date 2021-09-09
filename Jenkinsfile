@@ -1,7 +1,8 @@
 pipeline {
    agent any
 
-  
+   environment
+   {NEW_VERSION=1.0}
 
    stages {
      
@@ -10,7 +11,7 @@ pipeline {
                
              bat 'echo "Preparing"'
                      echo  "${env.BRANCH_NAME}"
-                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                     echo "Running Releas version $ $NEW_VERSION with ${env.BUILD_ID} on ${env.JENKINS_URL}"
            
          }
           }
