@@ -8,7 +8,7 @@ node {
   
   emailext mimeType: 'text/html',
                  subject: "[Jenkins]${currentBuild.fullDisplayName}",
-                 to: "sahu.avinash@gmail.com",
+                 to: "sahu.avinash@gmail.com","acs_in@yahoo.com",
                  body: '''<a href="${BUILD_URL}input">click to approve</a>'''
 }
 //
