@@ -54,6 +54,10 @@ pipeline {
         }
 
       stage("Deploy") {
+          parameters {
+        choice(name: 'VERSION', choices: ['9.1.0', '9.2.0', '9.3.0'], description: '')
+  
+    }
            steps {
              bat 'echo "Deploy"'
               echo "deploying version ${VERSION}"
