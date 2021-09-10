@@ -39,11 +39,21 @@ pipeline {
               }
           }
       stage("test") {
+         input {
+                message "Can we Proceed?"
+                ok "Yes"
+                submitter "Digital Varys"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'DigiralVarys', description: 'Member')
+                }
+            
+            
             when {
                 expression {
                     params.executeTests
                 }
             }
+         
             steps {
                echo "TEST.......ing"
                  script {
