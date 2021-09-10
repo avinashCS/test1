@@ -57,7 +57,7 @@ pipeline {
          
            steps {
                parameters {
-        choice(name: 'VERSION', choices: ['9.1.0', '9.2.0', '9.3.0'], description: '')
+        choice(name: 'VERSION1', choices: ['9.1.0', '9.2.0', '9.3.0'], description: '')
   
     }
              bat 'echo "Deploy"'
