@@ -56,6 +56,7 @@ pipeline {
             }
          
             steps {
+               echo "${PERSON}, is proceeding..."
                echo "TEST.......ing"
                  script {
                     gv.testApp()
